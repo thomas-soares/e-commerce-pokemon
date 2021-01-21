@@ -9,8 +9,10 @@ export default function CartProvider({ children }) {
     useEffect(() => {
         let value = 0;
 
-        cart.map((price) => {
-            value = value + price
+        cart.map(price => {
+            value = value + price;
+
+            return value;
         });
 
         setTotalValue(value);
