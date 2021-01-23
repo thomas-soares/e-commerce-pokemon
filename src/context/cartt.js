@@ -18,8 +18,8 @@ export default function CartProvider({ children }) {
         setTotalValue(value);
     }, [cart]);
 
-    function add(name, price) {
-        const pokemon = [name, price]
+    function add(name) {
+        const pokemon = name;
         const newCart = cart;
 
         newCart.push(pokemon);

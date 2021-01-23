@@ -10,6 +10,7 @@ function Card({ pokemon }) {
     return (
         <div className="Card">
             <div className="Card__img">
+                {/* TODO: colocar foto do pokemon de costas tbm, com botão para virar */}
                 <img src={pokemon.sprites.front_default} alt="" />
             </div>
             <div className="Card__name">
@@ -30,7 +31,7 @@ function Card({ pokemon }) {
                 }
             </div>
             <div className="Card__info">
-                <div className="Card__data Card__data--weight">
+                {/* <div className="Card__data Card__data--weight">
                     <p className="title">Weight</p>
                     <p>{pokemon.weight}</p>
                 </div>
@@ -41,9 +42,9 @@ function Card({ pokemon }) {
                 <div className="Card__data Card__data--ability">
                     <p className="title">Ability</p>
                     <p>{pokemon.abilities[0].ability.name}</p>
-                </div>
+                </div> */}
                 <div className="Card__data">
-                    <button type="button" onClick={() => add(pokemon.name, price)}>Adicionar</button>
+                    <button type="button" onClick={() => add(pokemon.name)}>Adicionar</button>
                 </div>
             </div>
         </div>

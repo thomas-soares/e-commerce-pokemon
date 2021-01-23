@@ -10,8 +10,9 @@ function App() {
   const [pokemonData, setPokemonData] = useState([])
   const [filter, setFilter] = useState('');
   const [loading, setLoading] = useState(true);
-  // a quantia total de pokemons é 807, foi colocado 50 para testes
-  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=50'
+  
+  // a quantia total de pokemons é 807, foi colocado 100 para testes
+  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=100'
 
   useEffect(() => {
     async function fetchData() {
@@ -54,19 +55,21 @@ function App() {
           onChange={handleSearchChange}
         />
       </div>
-      <div>
-        {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
-          <>
-            <div className="grid-container">
-              {pokemonData.map((pokemon, i) => 
-                pokemon.name.includes(filter) &&
-                <Card key={i} pokemon={pokemon} />
-              )}
-            </div>
-          </>
-        )}
+      <div className="container">
+        {/* <div> */}
+          {loading ? <h1 style={{ textAlign: 'center', color: 'white' }}>Loading...</h1> : (
+            <>
+              <div className="grid-container">
+                {pokemonData.map((pokemon, i) => 
+                  pokemon.name.includes(filter) &&
+                  <Card key={i} pokemon={pokemon} />
+                )}
+              </div>
+            </>
+          )}
+        {/* </div> */}
+        <Cart />
       </div>
-      <Cart />
     </>
   );
 }
