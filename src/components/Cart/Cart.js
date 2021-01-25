@@ -33,8 +33,11 @@ function Cart() {
             {
                 modalOpen && 
                 <>
-                    <button onClick={() => setModalOpen(false)}>Remover modal</button>
-                    <Modal />
+                    <span className="modal__overlay" onClick={() => setModalOpen(false)}></span>
+                    <div className="cart__container__modal">
+                        <button type="button" className="cart__close__modal" onClick={() => setModalOpen(false)}>X</button>
+                        <Modal />
+                    </div>
                 </>
             }
         </>
