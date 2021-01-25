@@ -1,32 +1,31 @@
-import { useCart } from '../../context/cartt'
+import { useState } from 'react';
+import { useCart } from '../../context/cartt';
+import Modal from '../../components/Modal';
 
 import './style.css';
 
 function Cart() {
-    const { cart, totalValue } = useCart();
+    const { cart, totalValue, checkout } = useCart();
+    const [modalOpen, setModalOpen] = useState(false);
 
-    console.log("11111111", cart)
-    console.log("11111111", totalValue)
-
-    // TODO: esta adicionando itens vazios, corrigir para adicionar o pokemon
     return (
-        <ul className="Cart">
-            Carrinho
-            {cart.map((cart, i) => {
-                console.log(cart)
-                console.log(totalValue)
-                
-                return (
-                    <li key={i}>
-                        <img src={cart.image} alt="" /> --- {cart.name} --- {cart.price}
-                    </li>
-                );
-            })}
+        <>
+            <ul className="Cart">
+                Carrinho
+                {cart.map((cart, i) => {
+                    return (
+                        <li key={i}>
+                            <img src={cart.image} alt="" /> --- {cart.name} --- {cart.price}
+                        </li>
+                    );
+                })}
 
-            {console.log(totalValue)}
-            <p>Total: ${totalValue}</p>
-            <button type="button">Finalizar</button>
-        </ul>
+                <p>Total: ${totalValue}</p>
+                <button type="button" onClick={() => {checkout(); setModalOpen(true);}}>Finalizar</button>
+            </ul>
+
+            { modalOpen && <Modal /> }
+        </>
     );
 }
 

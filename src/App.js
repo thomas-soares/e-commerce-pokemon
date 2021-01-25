@@ -10,9 +10,9 @@ function App() {
   const [pokemonData, setPokemonData] = useState([])
   const [filter, setFilter] = useState('');
   const [loading, setLoading] = useState(true);
-  
+
   // a quantia total de pokemons é 807, foi colocado 100 para testes
-  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=100'
+  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=50'
 
   useEffect(() => {
     async function fetchData() {
@@ -32,8 +32,8 @@ function App() {
     const novoPokemonData = [];
 
     _pokemonData.forEach(current => {
-      // TODO: pendente configuração no env pra iniciar uma luja especifica, por enquanto ta fixa a loja de fogo
-      if (current.types[0].type.name === 'fire') {
+      // TODO: pendente configuração no env pra iniciar uma loja especifica, por enquanto ta fixa a loja de fogo
+      if ((current.types[0].type.name === 'grass') || ((current.types[1]) && (current.types[1].type.name === 'grass'))) {
         novoPokemonData.push(current);
       }
     });
@@ -56,18 +56,16 @@ function App() {
         />
       </div>
       <div className="container">
-        {/* <div> */}
-          {loading ? <h1 style={{ textAlign: 'center', color: 'white' }}>Loading...</h1> : (
-            <>
-              <div className="grid-container">
-                {pokemonData.map((pokemon, i) => 
-                  pokemon.name.includes(filter) &&
-                  <Card key={i} pokemon={pokemon} />
-                )}
-              </div>
-            </>
-          )}
-        {/* </div> */}
+        {loading ? <h1 style={{ textAlign: 'center', color: 'white' }}>Loading...</h1> : (
+          <>
+            <div className="grid-container">
+              {pokemonData.map((pokemon, i) => 
+                pokemon.name.includes(filter) &&
+                <Card key={i} pokemon={pokemon} />
+              )}
+            </div>
+          </>
+        )}
         <Cart />
       </div>
     </>
