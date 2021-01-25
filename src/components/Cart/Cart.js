@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useCart } from '../../context/cartt';
+import { useCart } from '../../context/cartContext';
 import Modal from '../../components/Modal';
 
 import './style.css';
@@ -24,7 +24,13 @@ function Cart() {
                 <button type="button" onClick={() => {checkout(); setModalOpen(true);}}>Finalizar</button>
             </ul>
 
-            { modalOpen && <Modal /> }
+            {
+                modalOpen && 
+                <>
+                    <button onClick={() => setModalOpen(false)}>Remover modal</button>
+                    <Modal />
+                </>
+            }
         </>
     );
 }
