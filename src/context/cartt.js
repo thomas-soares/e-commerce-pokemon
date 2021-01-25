@@ -9,8 +9,12 @@ export default function CartProvider({ children }) {
     useEffect(() => {
         let value = 0;
 
-        cart.map(price => {
-            value = value + price;
+        console.log("AQUIIIII", cart)
+        
+        cart.map(item => {
+            console.log("AQUIIIII2222222", item.price)
+            
+            value = value + item.price;
 
             return value;
         });
@@ -18,8 +22,13 @@ export default function CartProvider({ children }) {
         setTotalValue(value);
     }, [cart]);
 
-    function add(name) {
-        const pokemon = name;
+    function add(name, price, image) {
+        const pokemon = {
+            name: name,
+            price: price,
+            image: image
+        }
+ 
         const newCart = cart;
 
         newCart.push(pokemon);

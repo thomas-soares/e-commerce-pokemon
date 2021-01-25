@@ -44,7 +44,7 @@ function Card({ pokemon }) {
                     <p>{pokemon.abilities[0].ability.name}</p>
                 </div> */}
                 <div className="Card__data">
-                    <button type="button" onClick={() => add(pokemon.name)}>Adicionar</button>
+                    <button type="button" onClick={() => add(pokemon.name, price, pokemon.sprites.front_default)}>Adicionar</button>
                 </div>
             </div>
         </div>
