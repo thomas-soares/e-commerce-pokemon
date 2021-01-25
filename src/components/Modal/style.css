@@ -1,0 +1,43 @@
+p {
+    margin: 0;
+}
+
+.Modal {
+    background: white;
+    border-radius: 10px;
+}
+
+.Modal__img {
+    text-align: center;
+}
+
+.Modal__types {
+    display: flex;
+    justify-content: center;    
+}
+
+.Modal__type {
+    padding: 5px 10px;
+    margin: 10px 10px 10px 0;
+    border-radius: 5px;
+    background: cyan;
+    color: #fff;
+}
+
+.Modal__name {
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 800;
+}
+
+.Modal__info {
+    margin-left: 10px;
+}
+
+.Modal__data {
+    padding-bottom: 10px;
+}
+
+.Modal__data .title {
+    font-weight: 700;
+}
