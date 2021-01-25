@@ -10,9 +10,7 @@ function App() {
   const [pokemonData, setPokemonData] = useState([])
   const [filter, setFilter] = useState('');
   const [loading, setLoading] = useState(true);
-
-  // a quantia total de pokemons é 807, foi colocado 100 para testes
-  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=50'
+  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=807'
 
   useEffect(() => {
     async function fetchData() {
@@ -33,7 +31,7 @@ function App() {
 
     _pokemonData.forEach(current => {
       // TODO: pendente configuração no env pra iniciar uma loja especifica, por enquanto ta fixa a loja de fogo
-      if ((current.types[0].type.name === 'grass') || ((current.types[1]) && (current.types[1].type.name === 'grass'))) {
+      if ((current.types[0].type.name === 'fire') || ((current.types[1]) && (current.types[1].type.name === 'fire'))) {
         novoPokemonData.push(current);
       }
     });
@@ -47,16 +45,17 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <div>
+      <header className="app__header">
+        <Navbar />
         <input
           type="text"
           placeholder="Pesquisar..."
+          className="app__search"
           onChange={handleSearchChange}
         />
-      </div>
+      </header>
       <div className="container">
-        {loading ? <h1 style={{ textAlign: 'center', color: 'white' }}>Loading...</h1> : (
+        {loading ? <p style={{ textAlign: 'center', color: '#FFF', fontSize: '30px' }}>Loading...</p> : (
           <>
             <div className="grid-container">
               {pokemonData.map((pokemon, i) => 

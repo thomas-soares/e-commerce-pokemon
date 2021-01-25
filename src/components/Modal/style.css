@@ -1,43 +1,39 @@
-p {
-    margin: 0;
-}
-
-.Modal {
-    background: white;
+.modal {
+    background: #FFF;
     border-radius: 10px;
 }
 
-.Modal__img {
+.modal__img {
     text-align: center;
 }
 
-.Modal__types {
+.modal__types {
     display: flex;
     justify-content: center;    
 }
 
-.Modal__type {
+.modal__type {
     padding: 5px 10px;
     margin: 10px 10px 10px 0;
     border-radius: 5px;
     background: cyan;
-    color: #fff;
+    color: #FFF;
 }
 
-.Modal__name {
+.modal__name {
     text-align: center;
     text-transform: capitalize;
     font-weight: 800;
 }
 
-.Modal__info {
+.modal__info {
     margin-left: 10px;
 }
 
-.Modal__data {
+.modal__data {
     padding-bottom: 10px;
 }
 
-.Modal__data .title {
+.modal__data .title {
     font-weight: 700;
 }
