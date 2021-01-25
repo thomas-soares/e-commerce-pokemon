@@ -1,4 +1,4 @@
-import { useCart } from '../../context/cartt'
+import { useCart } from '../../context/cartContext'
 import typeColors from '../../helpers/typeColors'
 import './style.css';
 
