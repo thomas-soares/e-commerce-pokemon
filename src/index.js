@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import CartProvider from './context/cartContext';
+require('dotenv').config();
 
 ReactDOM.render(
   <React.StrictMode>
