@@ -18,7 +18,7 @@
     "start-grass": "cp grass.env .env && react-scripts start",
     "start-dragon": "cp dragon.env .env && react-scripts start",
     "start-dark": "cp dark.env .env && react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp water.env build/.env",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
