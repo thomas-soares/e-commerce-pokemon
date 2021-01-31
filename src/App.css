@@ -49,7 +49,6 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #FD7D24;
 }
 
 .app__search {

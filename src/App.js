@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import typeColors from './helpers/typeColors';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
 import Cart from './components/Cart';
@@ -30,8 +31,7 @@ function App() {
     const novoPokemonData = [];
 
     _pokemonData.forEach(current => {
-      // TODO: pendente configuração no env pra iniciar uma loja especifica, por enquanto ta fixa a loja de fogo
-      if ((current.types[0].type.name === 'fire') || ((current.types[1]) && (current.types[1].type.name === 'fire'))) {
+      if ((current.types[0].type.name === process.env.REACT_APP_TYPE_SHOP) || ((current.types[1]) && (current.types[1].type.name === process.env.REACT_APP_TYPE_SHOP))) {
         novoPokemonData.push(current);
       }
     });
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <>
-      <header className="app__header">
+      <header className="app__header" style={{ backgroundColor: typeColors[process.env.REACT_APP_TYPE_SHOP] }}>
         <Navbar />
         <input
           type="text"
