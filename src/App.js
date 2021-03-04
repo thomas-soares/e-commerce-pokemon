@@ -11,7 +11,7 @@ function App() {
   const [pokemonData, setPokemonData] = useState([])
   const [filter, setFilter] = useState('');
   const [loading, setLoading] = useState(true);
-  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=400'
+  const initialURL = 'https://pokeapi.co/api/v2/pokemon?limit=100'
 
   useEffect(() => {
     async function fetchData() {
