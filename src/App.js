@@ -63,7 +63,7 @@ function App() {
                 <Card key={i} pokemon={pokemon} />
               )}
             </div>
-          </>
+          </> 
         )}
         <Cart />
       </div>
