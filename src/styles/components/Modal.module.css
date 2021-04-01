@@ -1,0 +1,35 @@
+.modal {
+    background: #FFF;
+    padding: 30px;
+    text-align: center;
+}
+
+.modal p {
+    margin-bottom: 15px;
+}
+
+.cart__container__modal {
+    position: absolute;
+    top: calc(50% - 100px);
+    z-index: 10;
+}
+
+.cart__close__modal {
+    background-color: transparent;
+    color: #FFF;
+    border: none;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: -35px;
+    right: -35px;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
