@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useCart } from '../../context/cartContext';
-import Modal from '../../components/Modal';
+import { useCart } from '../context/cartContext';
+import Modal from './Modal';
 
 import './style.css';
 
