@@ -1,14 +1,15 @@
 import { useCart } from '../context/cartContext'
 import typeColors from '../helpers/typeColors'
-import './style.css';
 
-function Card({ pokemon }) {
+import styles from '../styles/components/Card.module.css';
+
+export default function Card({ pokemon }) {
     const price = pokemon.id * 3;
 
     const { add } = useCart();
 
     return (
-        <div className="card">
+        <div className={styles.card}>
             <div className="card__container">
                 <div className="card__img">
                     <img src={pokemon.sprites.front_default} alt="" />
@@ -49,5 +50,3 @@ function Card({ pokemon }) {
         </div>
     );
 }
-
-export default Card;

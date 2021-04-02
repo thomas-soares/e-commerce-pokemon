@@ -1,6 +1,4 @@
-import './style.css';
-
-function Modal() {
+export default function Modal() {
 
     return (
         <>
@@ -12,5 +10,3 @@ function Modal() {
         </>
     );
 }
-
-export default Modal;

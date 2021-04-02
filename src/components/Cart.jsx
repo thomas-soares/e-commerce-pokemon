@@ -2,9 +2,7 @@ import { useState } from 'react';
 import { useCart } from '../context/cartContext';
 import Modal from './Modal';
 
-import './style.css';
-
-function Cart() {
+export default function Cart() {
     const { cart, totalValue, checkout } = useCart();
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -43,5 +41,3 @@ function Cart() {
         </>
     );
 }
-
-export default Cart;
