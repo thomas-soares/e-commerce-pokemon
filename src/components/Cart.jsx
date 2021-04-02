@@ -2,13 +2,15 @@ import { useState } from 'react';
 import { useCart } from '../context/cartContext';
 import Modal from './Modal';
 
+import styles from '../styles/components/Cart.module.css';
+
 export default function Cart() {
     const { cart, totalValue, checkout } = useCart();
     const [modalOpen, setModalOpen] = useState(false);
 
     return (
         <>
-            <div className="cart">
+            <div className={styles.cart}>
                 <div className="cart__container">
                     <p className="cart__title">Carrinho</p>
                     <ul className="cart__list">
