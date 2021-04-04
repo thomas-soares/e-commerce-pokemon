@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useCart } from '../context/cartContext';
 import Modal from './Modal';
 
-import styles from '../styles/components/Cart.module.css';
+import '../styles/components/Cart.css';
 
 export default function Cart() {
     const { cart, totalValue, checkout } = useCart();
@@ -10,7 +10,7 @@ export default function Cart() {
 
     return (
         <>
-            <div className={styles.cart}>
+            <div className="cart">
                 <div className="cart__container">
                     <p className="cart__title">Carrinho</p>
                     <ul className="cart__list">

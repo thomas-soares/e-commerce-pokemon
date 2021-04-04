@@ -1,10 +1,10 @@
-import styles from '../styles/components/Modal.module.css';
+import '../styles/components/Modal.css';
 
 export default function Modal() {
 
     return (
         <>
-            <div className={styles.modal}>
+            <div className="modal">
                 <p>Obrigado!!!</p>
                 <p>Você ganhou de volta</p>
                 <p>$ 10,00</p>
